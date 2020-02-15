@@ -2,6 +2,11 @@
 
 這是 twjug-lite 的 OAuth Authorization Code Flow 的 workshop 練習專案。
 
+本次的投影片：
+ * [SpeakerDeck](https://speakerdeck.com/qrtt1/oauth-2-dot-0-authorization-code-flow)
+ * [PDF](https://github.com/qrtt1/twjug-lite-oauth-labs/blob/slides/docs/TWJUG-OAuth.pdf)
+
+
 ## 準備工作
 
 * 背景知識 [OAuth 2.0 and OpenID Connect (in plain English)](https://www.youtube.com/watch?v=996OiexHze0&feature=youtu.be)
