@@ -18,3 +18,6 @@
     * Thymeleaf
 * [gitignore 設定](https://www.gitignore.io/api/java,gradle,java-web,intellij)
 
+## 動手做看看
+
+請參考[實戰指引](docs/README.md)
