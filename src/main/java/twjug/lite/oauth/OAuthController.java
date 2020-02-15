@@ -1,6 +1,5 @@
 package twjug.lite.oauth;
 
-import org.springframework.boot.json.JsonParser;
 import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +33,7 @@ public class OAuthController {
         return "index";
     }
 
+    // Step 1
     @RequestMapping("/authorize")
     public ModelAndView authorize(Model model) throws UnsupportedEncodingException {
         // TODO 當 Resource Owner 按下 [Connect with XXXX]，需要組裝好適當的 Authorization Server Endpoint URL 並導向過去
@@ -54,11 +54,18 @@ public class OAuthController {
 
     @RequestMapping("/callback")
     public ModelAndView callback(HttpServletRequest request) throws IOException, URISyntaxException {
+        // Step 2
         // 當 Resource Owner 完成 Authorization 後，視回應的情況處理結果
         String code = request.getParameter("code");
         String state = request.getParameter("state");
 
+        // Step 3
         // TODO 取得 code 與 state，進行 access_token 交換
+        if (true) {
+            System.out.println(code);
+            System.out.println(state);
+            return new ModelAndView("redirect:index");
+        }
 
         // post body
         Map<String, Object> body = new HashMap<>();
@@ -77,6 +84,7 @@ public class OAuthController {
                 .body(body);
         ResponseEntity<String> response = restTemplate.exchange(requestEntity, String.class);
 
+        // Step 4
         // TODO 獲得 access_token 後，顯示 email
         // OAuth Request 範例：https://developer.github.com/v3/#authentication
         // User Email API：https://developer.github.com/v3/users/emails/
